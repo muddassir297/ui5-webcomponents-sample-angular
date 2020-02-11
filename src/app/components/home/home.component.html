@@ -1,0 +1,40 @@
+<div class="background_image fd-has-padding-small">
+    <h2>The Title</h2>
+    <p>Donec bibendum diam nibh, sit amet ornare ante fermentum sed. Ut vulputate justo at orci sollicitudin.</p> 
+</div>
+  
+<ui5-card avatar="sap-icon://group" heading="Employee" subtitle="Direct Reports" status="{{employees.length}} of {{Employees.length}}" class="medium">
+	<div class="card-content">
+		<ui5-list separators="None" class="content-padding" style="width: 100%" *ngFor = "let Employee of employees">
+			<ui5-li-custom [routerLink]="['/employee', Employee.EmployeeID]">
+				<ui5-li image="../assets/{{Employee.ImageURI}}"></ui5-li>
+				<div class="item">
+					<div class="item-content-begin">
+						<ui5-title level="H5" class="item-content-begin-title">{{Employee.FirstName}} {{Employee.LastName}}</ui5-title>
+						<ui5-label>{{Employee.City}}, {{Employee.Country}}</ui5-label>
+					</div>
+					<div class="item-content-end">
+						<span>{{Employee.EmployeeID}}</span>
+					</div>
+				</div>
+			</ui5-li-custom>
+		</ui5-list>
+	</div>
+</ui5-card>
+<ui5-card avatar="sap-icon://group" heading="Suppliers" subtitle="Direct Reports" status="{{suppliers.length}} of {{Suppliers.length}}" class="medium">
+	<div class="card-content">
+		<ui5-list separators="None" class="content-padding" style="width: 100%" *ngFor = "let Suppliers of suppliers">
+			<ui5-li-custom>
+				<div class="item" style="padding: 10px 0 0 20px;">
+					<div class="item-content-begin">
+						<ui5-title level="H5" class="item-content-begin-title">{{Suppliers.CompanyName}}</ui5-title>
+						<ui5-label>{{Suppliers.ContactName}}</ui5-label>
+					</div>
+					<div class="item-content-end">
+						<span>{{Suppliers.Country}}</span>
+					</div>
+				</div>
+			</ui5-li-custom>
+		</ui5-list>
+	</div>
+</ui5-card>

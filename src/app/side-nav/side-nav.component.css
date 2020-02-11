@@ -1,0 +1,18 @@
+fd-icon {
+    padding-right: 10px;
+}
+a{
+    outline:none;
+ }
+ a::-moz-focus-inner {
+    border: 0;
+ }
+.expanded-transition {
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+  transition: width 2s;
+  display: block
+}
+
+fd-side-nav-item {
+  border-bottom: 1px solid #e5e5e5;
+}

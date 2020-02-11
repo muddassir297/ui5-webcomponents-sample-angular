@@ -1,0 +1,36 @@
+<div class="fd-has-padding-small">
+  <a class="back-button" (click)= "goBack(employee.Country)">
+      <span class="sap-icon--navigation-left-arrow sap-icon--l"></span>
+  </a>    
+</div>
+
+<div class="fd-tile">
+    <div class="fd-tile__media">
+        <img class="background_image" src="../assets/{{employee.ImageURI}}" alt="">
+    </div>
+    <div class="fd-tile__content">
+        <ui5-title level="H4">{{employee.FirstName}} {{employee.LastName}}</ui5-title>
+        <ui5-title level="H6">Employee ID: {{employee.EmployeeID}}</ui5-title>
+        <ui5-title level="H6">Home Phone: {{employee.HomePhone}}</ui5-title>
+    </div>
+</div>
+
+<ui5-tabcontainer class="full-width" collapsed fixed show-overflow>
+    <ui5-tab text="PERSONAL INFO" selected>
+        
+    </ui5-tab>
+    
+  </ui5-tabcontainer>
+  <div class="fd-container fd-container--fluid fd-has-padding-medium">
+      <ui5-title level="H3">Address</ui5-title>
+      <div class="fd-col--4">
+        <ui5-title level="H6">Street: {{employee.Address}}</ui5-title>
+        <ui5-title level="H6">Postal Code: {{employee.PostalCode}}</ui5-title>
+        <ui5-title level="H6">City: {{employee.City}}</ui5-title>
+      </div>
+      <div class="fd-col--4">
+          <ui5-title level="H6">Region: {{employee.Region}}</ui5-title>
+          <ui5-title level="H6">Country: {{employee.Country}}</ui5-title>
+      </div>
+  </div>
+

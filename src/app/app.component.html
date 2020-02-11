@@ -1,35 +1,16 @@
-<app-header></app-header>
-<section class="app-content">
-  <app-user-input (addTodo)="handleAddTodo($event)"></app-user-input>
-  <app-list [todos]="unDone"
-    (editPressed)="editItem($event)"
-    (deletedItem)="removeItem($event)"
-    (changeSelection)="handleUndone($event)"></app-list>
 
-  <ui5-panel [collapsed]="!this.done.length">
-    <app-list [todos]="done" (editPressed)="editItem($event)"
-      (deletedItem)="removeItem($event)"
-      (changeSelection)="handleDone($event)"></app-list>
-  </ui5-panel>
-
-</section>
-
-<aside>
-  <ui5-dialog #dialog header-text="Edit Todo item" >
-    <div class="dialog-content">
-      <div class="edit-wrapper">
-        <ui5-label>Title:</ui5-label>
-        <ui5-textarea #dialogInput class="title-textarea" max-length="24" show-exceeded-text [value]="oItemToEdit.text"></ui5-textarea>
+<div class="fd-shell fd-shell--fundamentals">
+    <div class="fd-shell__header">
+        <app-header (pressMenu)="clickMenu($event)"></app-header>
     </div>
-
-    <div class="edit-wrapper date-edit-fields">
-        <ui5-label>Date:</ui5-label>
-        <ui5-datepicker #dialogDatePicker format-pattern="dd/MM/yyyy" [value]="oItemToEdit.deadline"></ui5-datepicker>
-    </div>
-  </div>
-    <div class="dialog-footer">
-      <ui5-button design="Transparent" (click)="closeDialog()">Cancel</ui5-button>
-      <ui5-button design="Emphasized" (click)="saveDialog()">Save</ui5-button>
-	</div>
-  </ui5-dialog>
-</aside>
+    <div class="fd-shell__app">
+        <div class="fd-app">
+            <div class="fd-app__navigation fd-app__navigation">
+                <app-side-nav [sideNavs]="sideNavs" [expanded]="expanded" (pressSideNav)="clickSideNav($event)"></app-side-nav>
+            </div>
+            <main class="fd-app__main">
+                <router-outlet></router-outlet>                
+            </main>
+        </div>
+    </div>   
+</div>

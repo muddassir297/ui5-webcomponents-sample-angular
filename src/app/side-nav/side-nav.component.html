@@ -1,0 +1,12 @@
+<fd-side-nav [collapsed]="!expanded">
+    <div fd-side-nav-list>
+        <fd-side-nav-item *ngFor="let sideNav of sideNavs" >
+            <a [routerLink]= "sideNav.navigation" fd-side-nav-link
+                [ngClass]="{'is-selected': sideNav.selected}" 
+                aira-selected="sideNav.selected"
+                (click)= "handleClickSideNav(sideNav.navigation)">
+                <fd-icon [glyph]="sideNav.icon" [size]="'l'"></fd-icon> <span *ngIf="expanded">{{sideNav.label}}</span>
+            </a>
+        </fd-side-nav-item>                    
+    </div>
+</fd-side-nav>

@@ -1,0 +1,31 @@
+<div class="fd-has-padding-medium" *ngFor="let employeeProfile of employeeProfileData">
+	<ui5-panel width="100%" accessible-role="Complementary"
+		class="full-width" collapsed="false">
+		<div slot="header" class="header">
+			<ui5-title>{{ employeeProfile.Country }} ({{ employeeProfile.gridList.length }})</ui5-title>
+		</div>
+		<div class="fd-layout-grid fd-layout-grid--col-4">
+				<div class="fd-panel" *ngFor="let Employee of employeeProfile.gridList">
+					<div class="fd-panel__body nav-to-employee-page" [routerLink]="['/employee', Employee.EmployeeID]">
+						  <div class="fd-col--3">
+							  <span class="">  
+									  <img class="fd-image--l fd-image--circle" src="../assets/{{Employee.ImageURI}}" alt="">
+							  </span>                    
+						  </div>
+						<div class="fd-col--7">
+							  <ui5-title level="H4">{{Employee.FirstName}} {{Employee.LastName}}</ui5-title>
+							  <ui5-title level="H6">Employee ID: {{Employee.EmployeeID}}</ui5-title>
+							  <ui5-title level="H6">Home Phone: {{Employee.HomePhone}}</ui5-title>
+							  <ui5-title level="H6">Country: {{employeeProfile.Country}}</ui5-title>                    
+						</div>
+						<div class="fd-col--2 background_image">
+						  <a class="back-button">
+							  <span class="sap-icon--navigation-right-arrow sap-icon--l"></span>
+						  </a> 
+					  </div>
+					</div>
+					
+				</div>
+			</div>
+	</ui5-panel>
+</div>

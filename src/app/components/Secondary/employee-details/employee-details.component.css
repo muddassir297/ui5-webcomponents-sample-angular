@@ -1,0 +1,14 @@
+.back-button:hover{
+    background-color:rgba(10,110,209,.07);
+    padding: 10px 10px 5px 10px;
+    border: 1px dotted #32363a;
+    border-radius: 5px; 
+    cursor: pointer;
+}
+.back-button{
+    padding: 10px 10px 5px 10px;
+    border-radius: 5px; 
+}
+.background_image{
+    width: 100px;
+}

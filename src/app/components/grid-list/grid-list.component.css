@@ -1,0 +1,12 @@
+.background_image{
+    padding: 25px 0 0 0;
+}
+.nav-to-employee-page:hover{
+    cursor: pointer;
+}
+.nav-to-employee-page::-moz-focus-inner {
+    border: 0;
+ }
+ .nav-to-employee-page:active {
+    border: 0;
+}
